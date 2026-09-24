@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo | Sinclair Boutique</title>
+    <style>
+        /* Diseño general - DARK MODE */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            margin: 0;
+            padding: 15px;
+            color: #e0e0e0;
+        }
+        
+        /* Encabezado con Logo */
+        .header-logo {
+            text-align: center;
+            padding: 15px 0 25px 0;
+        }
+        .header-logo img {
+            max-width: 220px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        
+        /* Contenedor del producto */
+        .producto-card {
+            background-color: #1e1e1e;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+            overflow: hidden;
+            margin-bottom: 25px;
+            border: 1px solid #333;
+        }
+
+        /* Contenedor relativo para el badge flotante */
+        .carrusel-container {
+            position: relative;
+        }
+
+        /* Indicador de Deslizamiento Flotante */
+        .swipe-badge {
+            position: absolute;
+            bottom: 12px;
+            right: 12px;
+            background: rgba(0, 0, 0, 0.65);
+            color: #c0c0c0; /* Color plata */
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            pointer-events: none;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(192, 192, 192, 0.3);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+        }
+
+        /* Carrusel deslizable de fotos */
+        .carrusel-fotos {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .carrusel-fotos::-webkit-scrollbar {
+            height: 6px;
+        }
+        .carrusel-fotos::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 10px;
+        }
+        .carrusel-fotos img {
+            width: 100%;
+            flex: 0 0 100%;
+            scroll-snap-align: center;
+            object-fit: cover;
+            aspect-ratio: 1/1;
+        }
+
+        /* Información del producto */
+        .producto-info {
+            padding: 20px;
+        }
+        .producto-titulo {
+            font-size: 20px;
+            margin: 0 0 5px;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+        }
+        .producto-precio {
+            font-size: 24px;
+            color: #ff6b6b;
+            font-weight: bold;
+            margin: 0 0 15px;
+        }
+        .producto-desc {
+            font-size: 15px;
+            color: #b3b3b3;
+            line-height: 1.6;
+            margin-bottom: 5px;
+        }
+
+        /* Texto VIP de Invitación */
+        .vip-invite {
+            text-align: center;
+            font-family: 'Georgia', serif; /* Fuente elegante */
+            font-style: italic;
+            color: #c0c0c0; /* Color plata */
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 40px 10px 20px 10px;
+            padding: 20px;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+        
+        /* Botón Maestro Final para el Grupo */
+        .btn-grupo {
+            display: block;
+            text-align: center;
+            background-color: #25D366;
+            color: #000000;
+            text-decoration: none;
+            padding: 18px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LOGO DE LA BOUTIQUE -->
+    <div class="header-logo">
+        <img src="https://i.ibb.co/q3LBBmX0/Sinclair-Boutique-20260811-175033.jpg" alt="Sinclair Boutique Logo">
+    </div>
+
+    <!-- PRODUCTO 1 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/hFhYtHcc/IMG-20260206-WA0037.jpg" alt="Foto">
+                <img src="https://i.ibb.co/5gV8gXTk/IMG-20260206-WA0038.jpg" alt="Foto">
+                <img src="https://i.ibb.co/5gnG3nPV/IMG-20260206-WA0036.jpg" alt="Foto">
+                <img src="https://i.ibb.co/21ZCrM5z/IMG-20260206-WA0045.jpg" alt="Foto">
+                <img src="https://i.ibb.co/RpJJ8vjL/IMG-20260206-WA0039.jpg" alt="Foto">
+                <img src="https://i.ibb.co/tPs9TTyx/IMG-20260206-WA0044.jpg" alt="Foto">
+                <img src="https://i.ibb.co/W4Z7TGGT/IMG-20260206-WA0035.jpg" alt="Foto">
+                <img src="https://i.ibb.co/d01PMNFk/IMG-20260206-WA0042.jpg" alt="Foto">
+                <img src="https://i.ibb.co/d4rCyH2K/IMG-20260206-WA0041.jpg" alt="Foto">
+                <img src="https://i.ibb.co/WvjDnhPH/IMG-20260206-WA0034.jpg" alt="Foto">
+                <img src="https://i.ibb.co/qMJ4VLBc/IMG-20260206-WA0040.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">Combo set coach #1218</h2>
+            <p class="producto-precio">$470 MXN</p>
+            <div class="producto-desc">
+                📐 20x12<br>
+                💫 Correa ajustable<br>
+                🫶🏻 Tarjetero.<br>
+                🫡 Llavero de la marca.<br>
+                Calidad 1.1 🔥
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 2 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/HL2S66F3/IMG-20260923-WA0520.jpg" alt="Foto">
+                <img src="https://i.ibb.co/XZMqcgKz/IMG-20260923-WA0516.jpg" alt="Foto">
+                <img src="https://i.ibb.co/hxB8x3K2/IMG-20260923-WA0509.jpg" alt="Foto">
+                <img src="https://i.ibb.co/Y4Jmwt8w/IMG-20260923-WA0508.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">Cross YSL #2161</h2>
+            <p class="producto-precio">$550 MXN</p>
+            <div class="producto-desc">
+                📐 20X18<br>
+                Incluye:<br>
+                💝 Caja<br>
+                ☁️ Cubre polvo<br>
+                🔖Certificado<br>
+                📲 Interior con serie<br>
+                🔥 Calidad 1.1 🔥
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 3 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/ZpRhPP2W/IMG-20260904-WA0147.jpg" alt="Foto">
+                <img src="https://i.ibb.co/VYSvyzmj/IMG-20260904-WA0151.jpg" alt="Foto">
+                <img src="https://i.ibb.co/WWsGY9qS/IMG-20260904-WA0145.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">Bolsa Tote Loewe</h2>
+            <p class="producto-precio">$400 MXN</p>
+            <div class="producto-desc">
+                📐 38X27CM<br>
+                Incluye:<br>
+                💙 Cubre polvo<br>
+                😍 Logo hecho de madera<br>
+                💎 Completamente tejida<br>
+                🔥 CALIDAD 1.1 PREMIUM 🔥
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 4 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/4kkJzkH/IMG-20260904-WA0182.jpg" alt="Foto">
+                <img src="https://i.ibb.co/CsJkm7N6/IMG-20260904-WA0175.jpg" alt="Foto">
+                <img src="https://i.ibb.co/vgZ09PK/IMG-20260904-WA0178.jpg" alt="Foto">
+                <img src="https://i.ibb.co/ch93584n/IMG-20260904-WA0184.jpg" alt="Foto">
+                <img src="https://i.ibb.co/3y5kq1VV/IMG-20260904-WA0180.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">Bolsa Tote Loewe</h2>
+            <p class="producto-precio">$500 MXN</p>
+            <div class="producto-desc">
+                📐 40X30CM<br>
+                Incluye:<br>
+                💕 Logo de la marca<br>
+                😍 Cubre polvo<br>
+                💎 Completamente tejida<br>
+                🔥 CALIDAD 1.1 TOP 🔥
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 5 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/Pv7R4qQm/IMG-20260904-WA0247.jpg" alt="Foto">
+                <img src="https://i.ibb.co/Z3V4s5r/IMG-20260904-WA0259.jpg" alt="Foto">
+                <img src="https://i.ibb.co/DDFrRmsN/IMG-20260904-WA0268.jpg" alt="Foto">
+                <img src="https://i.ibb.co/nsYrs6PJ/IMG-20260904-WA0263.jpg" alt="Foto">
+                <img src="https://i.ibb.co/bMnGVBwH/IMG-20260904-WA0249.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">Bolso Valentino Rockstud #3031</h2>
+            <p class="producto-precio">$690 MXN</p>
+            <div class="producto-desc">
+                📐 35X21CM<br>
+                Incluye:<br>
+                🌥️ Cubre polvo<br>
+                📨 Certificado<br>
+                📿 Correa ajustable<br>
+                ✨ Interior con serie<br>
+                🍁 Calidad 🔝 1.1
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 6 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/3mLSNSRs/IMG-20260716-WA0660.jpg" alt="Foto">
+                <img src="https://i.ibb.co/6RwPSD42/IMG-20260716-WA0661.jpg" alt="Foto">
+                <img src="https://i.ibb.co/Z18RZ7Jf/IMG-20260716-WA0658.jpg" alt="Foto">
+                <img src="https://i.ibb.co/Kzwt8Fvw/IMG-20260716-WA0657.jpg" alt="Foto">
+                <img src="https://i.ibb.co/8gSHTqQM/IMG-20260716-WA0653.jpg" alt="Foto">
+                <img src="https://i.ibb.co/9kMJ64gT/IMG-20260716-WA0652.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">Coach Doble Zip #CZ112</h2>
+            <p class="producto-precio">$200 MXN</p>
+            <div class="producto-desc">
+                📐 22X13CM<br>
+                Incluye:<br>
+                🎁 Caja<br>
+                🌥️ Cubre polvo<br>
+                🍃 2 Llaveros<br>
+                ✨ Interior con serie<br>
+                🍁 Calidad 🔝 1.1
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 7 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/mV7DBR6m/IMG-20260618-WA0146.jpg" alt="Foto">
+                <img src="https://i.ibb.co/yFP2srPh/IMG-20260618-WA0145.jpg" alt="Foto">
+                <img src="https://i.ibb.co/Wpd2TqMp/IMG-20260618-WA0143.jpg" alt="Foto">
+                <img src="https://i.ibb.co/LDrZm8Mc/IMG-20260618-WA0144.jpg" alt="Foto">
+                <img src="https://i.ibb.co/DPrhmZvG/IMG-20260618-WA0141.jpg" alt="Foto">
+                <img src="https://i.ibb.co/23fDVzWS/IMG-20260618-WA0140.jpg" alt="Foto">
+                <img src="https://i.ibb.co/QFGkYk1D/IMG-20260618-WA0138.jpg" alt="Foto">
+                <img src="https://i.ibb.co/CpbYnSFz/IMG-20260618-WA0137.jpg" alt="Foto">
+                <img src="https://i.ibb.co/N22fhQ4F/IMG-20260618-WA0136.jpg" alt="Foto">
+                <img src="https://i.ibb.co/YFfd34c9/IMG-20260618-WA0139.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">Set Coach Signature Zip Trío #CZ9100</h2>
+            <p class="producto-precio">$400 MXN</p>
+            <div class="producto-desc">
+                Incluye:<br>
+                👝 Cubre polvo individual<br>
+                💝 Caja<br>
+                ⭐️ Shopping bag<br>
+                🍒 2 charms de acero<br>
+                📿 Muñequera<br>
+                🔥 Todas cuentan con número de serie<br>
+                😍 Calidad 1.1
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 8 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/wXLck4X/IMG-20260904-WA0212.jpg" alt="Foto">
+                <img src="https://i.ibb.co/7tnz1JLh/IMG-20260904-WA0214.jpg" alt="Foto">
+                <img src="https://i.ibb.co/SwHq10rx/IMG-20260904-WA0216.jpg" alt="Foto">
+                <img src="https://i.ibb.co/1f6GBFbX/IMG-20260904-WA0220.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">Tote Lacoste #NF4344</h2>
+            <p class="producto-precio">$570 MXN</p>
+            <div class="producto-desc">
+                📐 29X45CM<br>
+                Incluye:<br>
+                👛 Monedero<br>
+                ☁️ Cubre polvo<br>
+                💪🏻 Interior con etiqueta<br>
+                🔥 Calidad 🔝 1.1 🔥
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 9 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/m5ny84rq/IMG-20260911-WA0323.jpg" alt="Foto">
+                <img src="https://i.ibb.co/s9YFDr3C/IMG-20260911-WA0320.jpg" alt="Foto">
+                <img src="https://i.ibb.co/mC52c5Wv/IMG-20260911-WA0332.jpg" alt="Foto">
+                <img src="https://i.ibb.co/DHYY9TwZ/IMG-20260911-WA0329.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">Bolsa Kurt Geiger #70356</h2>
+            <p class="producto-precio">$390 MXN</p>
+            <div class="producto-desc">
+                📐23X17CM<br>
+                Incluye:<br>
+                ☁️ Cubre polvo<br>
+                🎫 Certificado<br>
+                🤩 Interior con serie<br>
+                🔥 Calidad 🔝 1.1 😍
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 10 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/PGkJzcH3/IMG-20260717-WA0142.jpg" alt="Foto">
+                <img src="https://i.ibb.co/C5GTX1Wp/IMG-20260717-WA0144.jpg" alt="Foto">
+                <img src="https://i.ibb.co/ZzZSmg1K/IMG-20260717-WA0146.jpg" alt="Foto">
+                <img src="https://i.ibb.co/MD9BmQ2Q/IMG-20260717-WA0140.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">Combo Guess #6002</h2>
+            <p class="producto-precio">$310 MXN</p>
+            <div class="producto-desc">
+                📐 12X9CM<br>
+                Incluye:<br>
+                🎁 Caja<br>
+                ☁️ Cubre polvo<br>
+                🗂️ Certificado<br>
+                🎴 Compartimento para tarjetas y monedas 🪙<br>
+                🔥 Calidad 🔝 1.1 🔥
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 11 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/6Qjnh3d/IMG-20260706-WA0023.jpg" alt="Foto">
+                <img src="https://i.ibb.co/jvV29GcH/IMG-20260706-WA0025.jpg" alt="Foto">
+                <img src="https://i.ibb.co/k6Kb02TQ/IMG-20260706-WA0024.jpg" alt="Foto">
+                <img src="https://i.ibb.co/3mYdqVVV/IMG-20260706-WA0022.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">BOLSA YSL TOTE SHOOPER #2509</h2>
+            <p class="producto-precio">$650 MXN</p>
+            <div class="producto-desc">
+                📐 33cm x 49cm<br>
+                👜 Cubre polvo<br>
+                🔥 Calidad 1.1<br>
+                📱 Código QR y Herrajes marcados<br>
+                🤎 Carteron de la marca
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 12 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/zWv06zRC/IMG-20260304-WA0874.jpg" alt="Foto">
+                <img src="https://i.ibb.co/hFFKmGCH/IMG-20260304-WA0872.jpg" alt="Foto">
+                <img src="https://i.ibb.co/1JbHGsmN/IMG-20260304-WA0876.jpg" alt="Foto">
+                <img src="https://i.ibb.co/1GF9s1MG/IMG-20260304-WA0878.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">BOLSA YSL TOTE #8801</h2>
+            <p class="producto-precio">$650 MXN</p>
+            <div class="producto-desc">
+                📐 35cm x 43cm<br>
+                Incluye:<br>
+                🫶🏼 Cubre polvo<br>
+                💳 Certificado<br>
+                😮‍💨 Calidad 1.1<br>
+                📱 Código QR<br>
+                ⛓️‍💥 Herrajes marcados
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 13 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/7xLxrL7x/IMG-20260602-WA0021.jpg" alt="Foto">
+                <img src="https://i.ibb.co/67DQhfJB/IMG-20260602-WA0018.jpg" alt="Foto">
+                <img src="https://i.ibb.co/F4GXMj4G/IMG-20260602-WA0017.jpg" alt="Foto">
+                <img src="https://i.ibb.co/p62JtmxQ/IMG-20260602-WA0020.jpg" alt="Foto">
+                <img src="https://i.ibb.co/Y4C1C6y3/IMG-20260602-WA0019.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">Gucci Marmont #1732</h2>
+            <p class="producto-precio">$580 MXN</p>
+            <div class="producto-desc">
+                📐 17X27CM<br>
+                Incluye:<br>
+                💎 Caja<br>
+                💎 Cubre polvo<br>
+                💎 Correa de metal<br>
+                💎 Interior con número de serie<br>
+                💎 ✨ Calidad 🔝 1.1 🔥
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 14 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/1xLD3bB/IMG-20260716-WA0257.jpg" alt="Foto">
+                <img src="https://i.ibb.co/HL4Pb6LS/IMG-20260716-WA0243.jpg" alt="Foto">
+                <img src="https://i.ibb.co/vC7NV6vL/IMG-20260716-WA0253.jpg" alt="Foto">
+                <img src="https://i.ibb.co/JwCjv8KY/IMG-20260716-WA0241.jpg" alt="Foto">
+                <img src="https://i.ibb.co/KjpM6YLV/IMG-20260716-WA0255.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">Coach Hailey Flap Bag #C-518</h2>
+            <p class="producto-precio">$620 MXN</p>
+            <div class="producto-desc">
+                Incluye:<br>
+                Caja 📦<br>
+                Cubrepolvo 👜<br>
+                Herrajes marcados ⛓️<br>
+                Factura 🧾<br>
+                Correa ajustable 💕<br>
+                Calidad premium 💯<br>
+                Número de serie #️⃣<br>
+                Llavero de la marca 🔥
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 15 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/5h7zdBhx/IMG-20260921-WA0541.jpg" alt="Foto">
+                <img src="https://i.ibb.co/qLS6fLxV/IMG-20260921-WA0553.jpg" alt="Foto">
+                <img src="https://i.ibb.co/1BTtxdq/IMG-20260921-WA0549.jpg" alt="Foto">
+                <img src="https://i.ibb.co/0RnC6qpL/IMG-20260921-WA0545.jpg" alt="Foto">
+                <img src="https://i.ibb.co/nq0tBpkx/IMG-20260921-WA0551.jpg" alt="Foto">
+                <img src="https://i.ibb.co/PGvby8hS/IMG-20260921-WA0563.jpg" alt="Foto">
+                <img src="https://i.ibb.co/8DsF1Hr7/IMG-20260921-WA0538.jpg" alt="Foto">
+                <img src="https://i.ibb.co/mVjk2gwh/IMG-20260921-WA0543.jpg" alt="Foto">
+                <img src="https://i.ibb.co/prbDF5CF/IMG-20260921-WA0536.jpg" alt="Foto">
+                <img src="https://i.ibb.co/69H6zF2/IMG-20260921-WA0547.jpg" alt="Foto">
+                <img src="https://i.ibb.co/HDQWsZfN/IMG-20260921-WA0531.jpg" alt="Foto">
+                <img src="https://i.ibb.co/yFzMZBrn/IMG-20260921-WA0559.jpg" alt="Foto">
+                <img src="https://i.ibb.co/rRY8QPwM/IMG-20260921-WA0561.jpg" alt="Foto">
+                <img src="https://i.ibb.co/Kcn90d3S/IMG-20260921-WA0557.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">Pashminas Variadas #PSH1</h2>
+            <p class="producto-precio">$300 MXN</p>
+            <div class="producto-desc">
+                Todas incluyen:<br>
+                📦 Caja<br>
+                🎴 Certificado<br>
+                📜 Factura<br>
+                📿 Etiqueta de la marca<br>
+                🔥 Calidad 🔝 1.1
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 16 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/cKpLGGBX/IMG-20260617-WA0263.jpg" alt="Foto">
+                <img src="https://i.ibb.co/zWNFXHqB/IMG-20260617-WA0277.jpg" alt="Foto">
+                <img src="https://i.ibb.co/gbDbMpzf/IMG-20260617-WA0275.jpg" alt="Foto">
+                <img src="https://i.ibb.co/Cs7Fnjfh/IMG-20260617-WA0287.jpg" alt="Foto">
+                <img src="https://i.ibb.co/SDHZBQQ0/IMG-20260617-WA0291.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">Combo Coach Sobaquera #SC301</h2>
+            <p class="producto-precio">$620 MXN</p>
+            <div class="producto-desc">
+                Incluye:<br>
+                ✅ Caja<br>
+                🫆 Certificado<br>
+                🔹 Billetera<br>
+                💳 Tarjetero<br>
+                🔥 Calidad 1.1
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 17 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/svGHkJv6/IMG-20260909-WA0681.jpg" alt="Foto">
+                <img src="https://i.ibb.co/zhs1WDRt/IMG-20260909-WA0683.jpg" alt="Foto">
+                <img src="https://i.ibb.co/B5qJ25kg/IMG-20260909-WA0691.jpg" alt="Foto">
+                <img src="https://i.ibb.co/WvSHWqG3/IMG-20260909-WA0689.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">Bolso Celine Teen #2510</h2>
+            <p class="producto-precio">$450 MXN</p>
+            <div class="producto-desc">
+                📐 16cm x 23cm<br>
+                Incluye:<br>
+                🎁 Caja<br>
+                😍 Cubre polvo<br>
+                📿 Correa ajustable<br>
+                ⛓️‍💥 Herrajes marcados<br>
+                📱 Interior con QR<br>
+                💳 Certificado<br>
+                😮‍💨 Calidad 1.1
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 18 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/xtMqrmpD/IMG-20260903-WA0400.jpg" alt="Foto">
+                <img src="https://i.ibb.co/DDY0hh42/IMG-20260903-WA0392.jpg" alt="Foto">
+                <img src="https://i.ibb.co/nN64pwXc/IMG-20260903-WA0396.jpg" alt="Foto">
+                <img src="https://i.ibb.co/LzDpkkVb/IMG-20260903-WA0391.jpg" alt="Foto">
+                <img src="https://i.ibb.co/B5RwG991/IMG-20260903-WA0398.jpg" alt="Foto">
+                <img src="https://i.ibb.co/JWkf8JZf/IMG-20260903-WA0401.jpg" alt="Foto">
+                <img src="https://i.ibb.co/5gJjJJdc/IMG-20260903-WA0393.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">BOLSO CELINE CUIR TRIOMPHE #2505</h2>
+            <p class="producto-precio">$650 MXN</p>
+            <div class="producto-desc">
+                📐 19 x 22 CM<br>
+                Incluye:<br>
+                💝 Caja<br>
+                🫶🏼 Cubre polvo<br>
+                🖤 Asa corta / Asa larga<br>
+                🔥 Herrajes de la marca<br>
+                😮‍💨 Calidad premium<br>
+                😍 Pochette de la marca<br>
+                🏷️ Etiqueta de la Marca<br>
+                📱 Código QR
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 19 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/dsnKLCcX/IMG-20260903-WA0427.jpg" alt="Foto">
+                <img src="https://i.ibb.co/S7Qmqdn6/IMG-20260903-WA0442.jpg" alt="Foto">
+                <img src="https://i.ibb.co/MDLHRzQ4/IMG-20260903-WA0436.jpg" alt="Foto">
+                <img src="https://i.ibb.co/RmTwyym/IMG-20260903-WA0446.jpg" alt="Foto">
+                <img src="https://i.ibb.co/KjxL9kNy/IMG-20260903-WA0432.jpg" alt="Foto">
+                <img src="https://i.ibb.co/bgT6Jscj/IMG-20260903-WA0419.jpg" alt="Foto">
+                <img src="https://i.ibb.co/tpR28dyh/IMG-20260903-WA0418.jpg" alt="Foto">
+                <img src="https://i.ibb.co/xqQKwgGJ/IMG-20260903-WA0443.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">Bolso Coach #C2112</h2>
+            <p class="producto-precio">$700 MXN</p>
+            <div class="producto-desc">
+                Incluye:<br>
+                📦 Caja<br>
+                👝 Cubrepolvo<br>
+                💕 Herrajes marcados<br>
+                🧾 Factura<br>
+                ⛓️ Correa ajustable<br>
+                💯 Calidad premium<br>
+                💕 Cadena llavero
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 20 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/v4Y0M0vf/IMG-20260921-WA0324.jpg" alt="Foto">
+                <img src="https://i.ibb.co/SwxjFs9v/IMG-20260921-WA0330.jpg" alt="Foto">
+                <img src="https://i.ibb.co/0j0pyYD3/IMG-20260921-WA0335.jpg" alt="Foto">
+                <img src="https://i.ibb.co/1t7JKZNp/IMG-20260921-WA0343.jpg" alt="Foto">
+                <img src="https://i.ibb.co/XxWKJNcY/IMG-20260921-WA0326.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">Goyard Belvedere Goyard #902</h2>
+            <p class="producto-precio">$550 MXN</p>
+            <div class="producto-desc">
+                📐 22X16CM<br>
+                Incluye:<br>
+                📦 Caja<br>
+                🔥 Cubre polvo<br>
+                🔖 Certificado<br>
+                😌 Interior con serie<br>
+                🫶🏼 Correa ajustable<br>
+                😍 Calidad 1.1 🔥<br>
+                💎 Interior amarillo como la original 💎
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 21 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/jP0JSf2T/IMG-20260921-WA0363.jpg" alt="Foto">
+                <img src="https://i.ibb.co/XnwHmHr/IMG-20260921-WA0375.jpg" alt="Foto">
+                <img src="https://i.ibb.co/cXRvsn1C/IMG-20260921-WA0383.jpg" alt="Foto">
+                <img src="https://i.ibb.co/G33Y9m7M/IMG-20260921-WA0365.jpg" alt="Foto">
+                <img src="https://i.ibb.co/7JSQ4M2P/IMG-20260921-WA0367.jpg" alt="Foto">
+                <img src="https://i.ibb.co/cSYrcJBW/IMG-20260921-WA0373.jpg" alt="Foto">
+                <img src="https://i.ibb.co/WWBKcgD1/IMG-20260921-WA0377.jpg" alt="Foto">
+                <img src="https://i.ibb.co/8g2Zq3GG/IMG-20260921-WA0362.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">Bandolera Amiri #2420</h2>
+            <p class="producto-precio">$430 MXN</p>
+            <div class="producto-desc">
+                📐 20X13CM<br>
+                Incluye:<br>
+                📦 Caja<br>
+                🔥 Cubre polvo<br>
+                💎 Certificado<br>
+                😌 Correa de metal<br>
+                🫶🏼 Calidad 🔝 1.1 🔥
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 22 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/nNfzBGVM/IMG-20260921-WA0428.jpg" alt="Foto">
+                <img src="https://i.ibb.co/DfF5bD3G/IMG-20260921-WA0432.jpg" alt="Foto">
+                <img src="https://i.ibb.co/tP2NncjW/IMG-20260921-WA0440.jpg" alt="Foto">
+                <img src="https://i.ibb.co/hFp8VdFd/IMG-20260921-WA0436.jpg" alt="Foto">
+                <img src="https://i.ibb.co/gb1vSF2z/IMG-20260921-WA0439.jpg" alt="Foto">
+                <img src="https://i.ibb.co/MDkdqfzG/IMG-20260921-WA0444.jpg" alt="Foto">
+                <img src="https://i.ibb.co/tPW94WmS/IMG-20260921-WA0442.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">Mochila Essentials 8686</h2>
+            <p class="producto-precio">$380 MXN</p>
+            <div class="producto-desc">
+                📐 29X40CM<br>
+                Incluye:<br>
+                🎒 Bolsa transparente<br>
+                🏷️ Etiqueta interna de la marca<br>
+                🔥 Calidad 🔝 1.1 🔥<br>
+                ✅ Varios compartimentos
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 23 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/Ndmc1NBB/IMG-20260423-WA0261.jpg" alt="Foto">
+                <img src="https://i.ibb.co/mVjKTgTJ/IMG-20260423-WA0256.jpg" alt="Foto">
+                <img src="https://i.ibb.co/RpZzWqJP/IMG-20260423-WA0269.jpg" alt="Foto">
+                <img src="https://i.ibb.co/vC9g8pw3/IMG-20260423-WA0271.jpg" alt="Foto">
+                <img src="https://i.ibb.co/6Jv9brHL/IMG-20260423-WA0272.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">BOLSO CELINE POLLY #23633</h2>
+            <p class="producto-precio">$600 MXN</p>
+            <div class="producto-desc">
+                📐 33 x 20 CM<br>
+                Incluye:<br>
+                🫶🏼 Cubre polvo<br>
+                🖤 Asa corta<br>
+                🔥 Hebilla de la marca<br>
+                😮‍💨 Calidad premium<br>
+                🏷️ Etiqueta de la Marca
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 24 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/35r8Y4jc/IMG-20260206-WA0032.jpg" alt="Foto">
+                <img src="https://i.ibb.co/jkQFHvjY/IMG-20260414-WA0066.jpg" alt="Foto">
+                <img src="https://i.ibb.co/3Y9bgSqs/IMG-20260206-WA0027.jpg" alt="Foto">
+                <img src="https://i.ibb.co/0y2HcmKh/IMG-20260206-WA0026.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">YSL Nolita Mini #6023</h2>
+            <p class="producto-precio">$650 MXN</p>
+            <div class="producto-desc">
+                📐 20x14 cm<br>
+                🎁 Caja imantada<br>
+                👝 Cubrepolvo<br>
+                💕 Código Qr<br>
+                🫶🏻 Herrajes Marcados<br>
+                Calidad premium 🔥
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 25 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/NdRkTTrK/IMG-20260223-WA1277.jpg" alt="Foto">
+                <img src="https://i.ibb.co/6JBPMmwz/IMG-20260223-WA1278.jpg" alt="Foto">
+                <img src="https://i.ibb.co/5hfrsCwZ/IMG-20260224-WA0004.jpg" alt="Foto">
+                <img src="https://i.ibb.co/kgBQnzYD/IMG-20260223-WA1281.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">BOLSA COACH MINI ROWAN #C8</h2>
+            <p class="producto-precio">$720 MXN</p>
+            <div class="producto-desc">
+                📐: 13cm x 18cm<br>
+                Incluye:<br>
+                📦 Caja<br>
+                🧾 Factura y Certificado<br>
+                ✅ Cubre polvo<br>
+                🩷 Llavero de la marca<br>
+                🔗 correa ajustable<br>
+                📱 Código QR<br>
+                🔥 Calidad 1.1
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 26 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/pr1wcYcR/IMG-20260614-WA0111.jpg" alt="Foto">
+                <img src="https://i.ibb.co/Y7YfB4vZ/IMG-20260614-WA0109.jpg" alt="Foto">
+                <img src="https://i.ibb.co/B2cY0czG/IMG-20260614-WA0107.jpg" alt="Foto">
+                <img src="https://i.ibb.co/fYjCXB4Q/IMG-20260614-WA0096.jpg" alt="Foto">
+                <img src="https://i.ibb.co/CKxyFcsj/IMG-20260614-WA0064.jpg" alt="Foto">
+                <img src="https://i.ibb.co/Kcjv1Sf2/IMG-20260614-WA0071.jpg" alt="Foto">
+                <img src="https://i.ibb.co/Ng1DS8ds/IMG-20260614-WA0091.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">Perfumes ALTA CALIDAD #L960</h2>
+            <p class="producto-precio">$450 MXN</p>
+            <div class="producto-desc">
+                💎 Botellas y cajas idénticos con grabados<br>
+                💎 Celofán de mejor calidad<br>
+                💎 Atomizador fino<br>
+                💎 Detalles perfectos como en fotos<br>
+                💎 Registró de Batch Code verificable<br>
+                💎 6hrs de duración de acuerdo al PH 🔥
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 27 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/C5WK8Jt1/IMG-20260824-WA0431.jpg" alt="Foto">
+                <img src="https://i.ibb.co/fVByQJby/IMG-20260824-WA0433.jpg" alt="Foto">
+                <img src="https://i.ibb.co/nMgCFNvR/IMG-20260824-WA0435.jpg" alt="Foto">
+                <img src="https://i.ibb.co/Cs6XnnKS/IMG-20260824-WA0440.jpg" alt="Foto">
+                <img src="https://i.ibb.co/xthtnFwc/IMG-20260824-WA0442.jpg" alt="Foto">
+                <img src="https://i.ibb.co/TBnzF2yy/IMG-20260824-WA0444.jpg" alt="Foto">
+                <img src="https://i.ibb.co/wZhxjqM7/IMG-20260824-WA0448.jpg" alt="Foto">
+                <img src="https://i.ibb.co/9Hsb6CWg/IMG-20260824-WA0449.jpg" alt="Foto">
+                <img src="https://i.ibb.co/8FMcLR2/IMG-20260824-WA0452.jpg" alt="Foto">
+                <img src="https://i.ibb.co/Q7r48MNL/IMG-20260824-WA0454.jpg" alt="Foto">
+                <img src="https://i.ibb.co/qFhmtN0N/IMG-20260824-WA0456.jpg" alt="Foto">
+                <img src="https://i.ibb.co/99nWQkL4/IMG-20260824-WA0458.jpg" alt="Foto">
+                <img src="https://i.ibb.co/MxPg8fth/IMG-20260824-WA0461.jpg" alt="Foto">
+                <img src="https://i.ibb.co/gMYkbNwP/IMG-20260824-WA0463.jpg" alt="Foto">
+                <img src="https://i.ibb.co/sJK4mxC5/IMG-20260824-WA0465.jpg" alt="Foto">
+                <img src="https://i.ibb.co/SD7Pn8XZ/IMG-20260824-WA0466.jpg" alt="Foto">
+                <img src="https://i.ibb.co/5W1jcSb4/IMG-20260824-WA0470.jpg" alt="Foto">
+                <img src="https://i.ibb.co/WW9tvTbB/IMG-20260824-WA0468.jpg" alt="Foto">
+                <img src="https://i.ibb.co/672Pyn5Y/IMG-20260824-WA0472.jpg" alt="Foto">
+                <img src="https://i.ibb.co/XZwhNxYZ/IMG-20260824-WA0474.jpg" alt="Foto">
+                <img src="https://i.ibb.co/1YHxjJvY/IMG-20260824-WA0476.jpg" alt="Foto">
+                <img src="https://i.ibb.co/hRFV3ZLt/IMG-20260824-WA0478.jpg" alt="Foto">
+                <img src="https://i.ibb.co/pvcfSg7r/IMG-20260824-WA0480.jpg" alt="Foto">
+                <img src="https://i.ibb.co/WWBh22dw/IMG-20260824-WA0482.jpg" alt="Foto">
+                <img src="https://i.ibb.co/hxKvTNWW/IMG-20260824-WA0484.jpg" alt="Foto">
+                <img src="https://i.ibb.co/qLZk1nmN/IMG-20260824-WA0486.jpg" alt="Foto">
+                <img src="https://i.ibb.co/7dwpsYrf/IMG-20260824-WA0488.jpg" alt="Foto">
+                <img src="https://i.ibb.co/hRD3Ybgd/IMG-20260824-WA0490.jpg" alt="Foto">
+                <img src="https://i.ibb.co/DgHwgqr2/IMG-20260824-WA0492.jpg" alt="Foto">
+                <img src="https://i.ibb.co/7xS0FmpT/IMG-20260824-WA0494.jpg" alt="Foto">
+                <img src="https://i.ibb.co/5xFXfmv2/IMG-20260824-WA0496.jpg" alt="Foto">
+                <img src="https://i.ibb.co/zh1c3M98/IMG-20260824-WA0498.jpg" alt="Foto">
+                <img src="https://i.ibb.co/nMgQBnk5/IMG-20260824-WA0500.jpg" alt="Foto">
+                <img src="https://i.ibb.co/rK1cLXqL/IMG-20260824-WA0502.jpg" alt="Foto">
+                <img src="https://i.ibb.co/PvmwqbxV/IMG-20260824-WA0504.jpg" alt="Foto">
+                <img src="https://i.ibb.co/XrLGPb0C/IMG-20260824-WA0506.jpg" alt="Foto">
+                <img src="https://i.ibb.co/4nxtbC7s/IMG-20260824-WA0508.jpg" alt="Foto">
+                <img src="https://i.ibb.co/4wwnn3wG/IMG-20260824-WA0510.jpg" alt="Foto">
+                <img src="https://i.ibb.co/tMQSRHJr/IMG-20260824-WA0512.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">Mochila Kipling semiReforzadas</h2>
+            <p class="producto-precio">$380 MXN</p>
+            <div class="producto-desc">
+                📐 45x30CM<br>
+                Incluye:<br>
+                🎒 Bolsa transparente de la marca<br>
+                🐒 Llavero<br>
+                🏋🏻‍♀️ Antebrazos y respaldo reforzados y acolchonado<br>
+                💻 Interior para laptop<br>
+                🪶 Cierres con la marca<br>
+                🔥 Calidad 🔝 1.1 🔥
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTO 28 -->
+    <div class="producto-card">
+        <div class="carrusel-container">
+            <div class="carrusel-fotos">
+                <img src="https://i.ibb.co/RTDKxY3p/IMG-20260702-WA0228.jpg" alt="Foto">
+                <img src="https://i.ibb.co/xSCVCXzM/IMG-20260702-WA0229.jpg" alt="Foto">
+                <img src="https://i.ibb.co/1YHHmG4S/IMG-20260702-WA0230.jpg" alt="Foto">
+                <img src="https://i.ibb.co/FL99R41H/IMG-20260702-WA0227.jpg" alt="Foto">
+                <img src="https://i.ibb.co/Gv04v54r/IMG-20260702-WA0226.jpg" alt="Foto">
+            </div>
+            <div class="swipe-badge">👉 Desliza para ver más</div>
+        </div>
+        <div class="producto-info">
+            <h2 class="producto-titulo">Bolsa Tote Goyard #G16685</h2>
+            <p class="producto-precio">$590 MXN</p>
+            <div class="producto-desc">
+                📐 29X20CM<br>
+                Incluye:<br>
+                🎁 Caja<br>
+                🌥️ Cubre polvo<br>
+                📨 Certificado<br>
+                📿 Correa ajustable<br>
+                ✨ Interior con serie<br>
+                🍁 Calidad 🔝 1.1
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN VIP Y BOTÓN DE WHATSAPP -->
+    <div class="vip-invite">
+        Si deseas descubrir más de nuestra colección y acceder a piezas exclusivas, te invitamos a formar parte de nuestra comunidad VIP. Pulsa el botón a continuación para unirte a nuestro grupo privado de WhatsApp, donde compartimos nuestro stock disponible en tiempo real y lanzamientos de nueva mercancía antes que nadie.
+    </div>
+
+    <a href="https://chat.whatsapp.com/DKGJdUjaRZm8w6SLHrL8nl" class="btn-grupo">
+        Únete al Grupo de Ventas VIP
+    </a>
+
+</body>
+</html>
